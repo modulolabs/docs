@@ -105,7 +105,7 @@ pygments_style = 'sphinx'
 # If true, keep warnings as "system message" paragraphs in the built documents.
 #keep_warnings = False
 
-breathe_projects = {"modulo-arduino": "/Users/ekt/modulo/arduino/docs/xml"}
+breathe_projects = {"modulo-arduino": "doxygen/xml"}
 breathe_default_project = "modulo-arduino"
 
 # -- Options for HTML output ----------------------------------------------
