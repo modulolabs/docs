@@ -42,6 +42,30 @@ that, your #include must be for "Modulo.h", not "Modulo/Modulo.h"::
 
     #include "Modulo.h"
 
+..
+    Listing Devices
+    --------------------------------------------------------------
+
+    Each modulo has a unique number called the Modulo ID. Modulo IDs make it
+    possible to communicate with a specific modulo, regardless of how it is
+    physically connected.
+
+    You can list all of the connected modulos and their IDs in one of two ways:
+
+    1) With a Display Modulo connected and the USB Control sketch running, press
+       the right button on the display to page through connected modulos. When a given
+       modulo is selected, its type and ID will be display and its LED will blink.
+    2) The command line program "modulo-list" will list all connected modulos and
+       their Modulo IDs. You can also run "modulo-list -i" to interactively
+       step through the list of modulos.
+
+       To use modulo-list, the USB Control sketch
+       must be running and the python library must be installed.
+
+       (NOTE: modulo-list
+       is currently broken but will be fixed in the next version of the python
+       library.)
+
 Running an example program
 --------------------------------------------------------------
 

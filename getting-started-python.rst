@@ -46,37 +46,41 @@ If you have previously used the Arduino app with your modulo controller, you'll
 need to :ref:`restore the USB Control sketch <restore-usb-control>`. If you
 have never used the modulo controller with Arduino you can skip this step.
 
+..
+    Listing Devices
+    --------------------------------------------------------------
 
-Run an example program
+    Each modulo has a unique number called the Modulo ID. Modulo IDs make it
+    possible to communicate with a specific modulo, regardless of how it is
+    physically connected.
+
+    You can list all of the connected modulos and their IDs in one of two ways:
+
+    1) With a Display Modulo connected and the USB Control sketch running, press
+       the right button on the display to page through connected modulos. When a given
+       modulo is selected, its type and ID will be display and its LED will blink.
+    2) The command line program "modulo-list" will list all connected modulos and
+       their Modulo IDs. You can also run "modulo-list -i" to interactively
+       step through the list of modulos.
+
+       To use modulo-list, the USB Control sketch
+       must be running and the python library must be installed.
+
+       (NOTE: modulo-list
+       is currently broken but will be fixed in the next version of the python
+       library.)
+
+Running an example program
 --------------------------------------------------------------
 
-To use modulo from python, connect the Modulo controller to your computer via
-USB.
+Now that everything's set up, you can select and run an example program. Depending
+on the hardware you have available, choose an example below:
 
-Save the code below to a file called "example.py" and then in a terminal,
-run "python example.py" in a terminal::
+* :ref:`Rainbow Knob Example <example-rainbow-knob-python>` if you have the Knob Modulo.
+* :ref:`Joystick and Motor Example <example-joystick-motor-python>` if you have the Joystick and Motor Driver modulos.
+* :ref:`Display Example <example-display-python>` if you have the Display modulo.
 
-   import modulo, time
 
-   port = modulo.Port()
-   knob = modulo.Knob(port)
-   display = modulo.Display(port)
-
-   while True :
-       display.clear()
-       display.set_cursor(0,0)
-       display.writeln(knob.get_angle())
-       display.update()
-       time.sleep(.05)
-
-Understanding the example
---------------------------------------------------------------
-
-Your code only needs to do three things:
-
-1) Create a Port object to communicate with the hardware.
-2) Create an object for each Modulo
-3) Call methods on the modulo objects to control them.
 
 
 

@@ -36,11 +36,33 @@ the Modulo Controller or some other Arduino board.
 
 To install it:
 
-1. Download the latest release as a .zip file from `the github repository <https://github.com/modulolabs/modulo-lib/releases>`_.
+1. Select "Manage Librarys" under the Sketch > Include Library menu.
+2. Search for and select the library "Modulo"
+3. Click "Install"
 
-2. Select "Add .ZIP Library" under the Sketch > Include Library menu.
-3. Select the zip file you just downloaded and click "Choose".
+..
+    Listing Devices
+    --------------------------------------------------------------
 
+    Each modulo has a unique number called the Modulo ID. Modulo IDs make it
+    possible to communicate with a specific modulo, regardless of how it is
+    physically connected.
+
+    You can list all of the connected modulos and their IDs in one of two ways:
+
+    1) With a Display Modulo connected and the USB Control sketch running, press
+       the right button on the display to page through connected modulos. When a given
+       modulo is selected, its type and ID will be display and its LED will blink.
+    2) The command line program "modulo-list" will list all connected modulos and
+       their Modulo IDs. You can also run "modulo-list -i" to interactively
+       step through the list of modulos.
+
+       To use modulo-list, the USB Control sketch
+       must be running and the python library must be installed.
+
+       (NOTE: modulo-list
+       is currently broken but will be fixed in the next version of the python
+       library.)
 
 Run an example sketch
 --------------------------------------------------------------
