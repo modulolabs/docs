@@ -25,8 +25,9 @@ board support packages.
 3) Press "OK" to close Preferences.
 4) Open "Board Manager" under the "Tools > Board" menu.
 5) In the Board Manager install both of these board packages:
-    Modulo Controller
-    Arduino SAMD Boards
+
+    * Modulo Controller
+    * Arduino SAMD Boards
 
 
 Installing the Modulo Library for Arduino
