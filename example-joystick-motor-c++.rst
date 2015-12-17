@@ -27,9 +27,16 @@ menu and selecting "MotorTutorial".
 
 .. code-block:: c++
 
-    // Include the Modulo library and the Wire library, which it depends on.
+    // For Arduino, include the Modulo library and the Wire library, which it depends on.
+    #ifdef ARDUINO
     #include "Modulo.h"
     #include "Wire.h"
+    #endif
+
+    // For Particle, include the Modulo library.
+    #ifdef PARTICLE
+    #include "Modulo/Modulo.h"
+    #endif
 
     // Create an object that represents each modulo
     MotorDriverModulo motorDriver;
@@ -71,9 +78,16 @@ menu and selecting "MotorEventsTutorial".
 
 .. code-block:: c++
 
-    // Include the Modulo library and the Wire library, which it depends on.
+    // For Arduino, include the Modulo library and the Wire library, which it depends on.
+    #ifdef ARDUINO
     #include "Modulo.h"
     #include "Wire.h"
+    #endif
+
+    // For Particle, include the Modulo library.
+    #ifdef PARTICLE
+    #include "Modulo/Modulo.h"
+    #endif
 
     // Create an object that represents each modulo
     MotorDriverModulo motorDriver;

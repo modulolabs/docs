@@ -25,9 +25,16 @@ menu and selecting "KnobTutorial".
 
 .. code-block:: c++
 
-    // Include the Modulo library and the Wire library, which it depends on.
+    // For Arduino, include the Modulo library and the Wire library, which it depends on.
+    #ifdef ARDUINO
     #include "Modulo.h"
     #include "Wire.h"
+    #endif
+
+    // For Particle, include the Modulo library.
+    #ifdef PARTICLE
+    #include "Modulo/Modulo.h"
+    #endif
 
     // Create an object that represents the knob
     KnobModulo knob;
@@ -73,9 +80,16 @@ menu and selecting "KnobEventsTutorial".
 
 .. code-block:: c++
 
-    // Include the Modulo library and the Wire library, which it depends on.
+    // For Arduino, include the Modulo library and the Wire library, which it depends on.
+    #ifdef ARDUINO
     #include "Modulo.h"
     #include "Wire.h"
+    #endif
+
+    // For Particle, include the Modulo library.
+    #ifdef PARTICLE
+    #include "Modulo/Modulo.h"
+    #endif
 
     // Declare a function that will be called when the knob is turned or pressed
     void onKnobChanged(KnobModulo &k);

@@ -25,8 +25,16 @@ menu and selecting "DisplayTutorial".
 
 ::
 
+    // For Arduino, include the Modulo library and the Wire library, which it depends on.
+    #ifdef ARDUINO
     #include "Modulo.h"
     #include "Wire.h"
+    #endif
+
+    // For Particle, include the Modulo library.
+    #ifdef PARTICLE
+    #include "Modulo/Modulo.h"
+    #endif
 
     // Create an object that represents the display
     DisplayModulo display;
@@ -79,8 +87,16 @@ menu and selecting "DisplayEventsTutorial".
 
 .. code-block:: c++
 
+    // For Arduino, include the Modulo library and the Wire library, which it depends on.
+    #ifdef ARDUINO
     #include "Modulo.h"
     #include "Wire.h"
+    #endif
+
+    // For Particle, include the Modulo library.
+    #ifdef PARTICLE
+    #include "Modulo/Modulo.h"
+    #endif
 
     // Create an object that represents the display
     DisplayModulo display;
