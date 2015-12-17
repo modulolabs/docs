@@ -42,30 +42,6 @@ that, your #include must be for "Modulo.h", not "Modulo/Modulo.h"::
 
     #include "Modulo.h"
 
-..
-    Listing Devices
-    --------------------------------------------------------------
-
-    Each modulo has a unique number called the Modulo ID. Modulo IDs make it
-    possible to communicate with a specific modulo, regardless of how it is
-    physically connected.
-
-    You can list all of the connected modulos and their IDs in one of two ways:
-
-    1) With a Display Modulo connected and the USB Control sketch running, press
-       the right button on the display to page through connected modulos. When a given
-       modulo is selected, its type and ID will be display and its LED will blink.
-    2) The command line program "modulo-list" will list all connected modulos and
-       their Modulo IDs. You can also run "modulo-list -i" to interactively
-       step through the list of modulos.
-
-       To use modulo-list, the USB Control sketch
-       must be running and the python library must be installed.
-
-       (NOTE: modulo-list
-       is currently broken but will be fixed in the next version of the python
-       library.)
-
 Running an example program
 --------------------------------------------------------------
 
@@ -75,5 +51,37 @@ on the hardware you have available, choose an example below:
 * :ref:`Rainbow Knob Example <example-rainbow-knob-c++>` if you have the Knob Modulo.
 * :ref:`Joystick and Motor Example <example-joystick-motor-c++>` if you have the Joystick and Motor Driver modulos.
 * :ref:`Display Example <example-display-c++>` if you have the Display modulo.
+
+Listing Devices
+--------------------------------------------------------------
+
+Each modulo has a unique number called the Modulo ID. Modulo IDs make it
+possible to communicate with a specific modulo, regardless of how it is
+physically connected.
+
+You can list all of the connected modulos and their IDs in one of two ways:
+
+1) With a Display Modulo connected and the USB Control sketch running, press
+   the right button on the display to page through connected modulos. When a given
+   modulo is selected, its type and ID will be display and its LED will blink.
+2) The command line program "modulo-list" will list all connected modulos and
+   their Modulo IDs. You can also run "modulo-list -i" to interactively
+   step through the list of modulos.
+
+   To use modulo-list, the USB Control sketch
+   must be running and the python library version 1.0 or greater
+   must be installed. (You can update the python library by following the 
+   :ref:`installation instructions <getting-started-python>` again.)
+
+You can refer to a specific Modulo in your program by 
+providing its ID when creating the object.
+For instance, to automatically use the first Knob::
+
+    Knob knob;
+
+And to use the Knob with the ID 12345::
+
+    Knob knob(12345);
+
 
 
