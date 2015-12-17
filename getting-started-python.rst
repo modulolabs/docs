@@ -14,16 +14,16 @@ Installation
 Mac Installation
 _____________________
 
-Install the python libraries by opening a terminal and running::
+To install or upgrade the python library run the following in a terminal::
 
-    sudo easy_install -U modulo-python pyserial
+    sudo easy_install -U modulo-python
 
 Linux Installation
 ____________________
 
-Install the python libraries by opening a terminal and running::
+To install or upgrade the python library run the following in a terminal::
 
-    sudo pip install -U modulo-python pyserial
+    sudo pip install -U modulo-python
 
 
 Windows Installation
@@ -36,9 +36,9 @@ A driver is not necessary on mac or linux.
 Most windows installations do not come with python, so 
 `download <https://www.python.org/downloads/>`_ and install it fist.
 
-Install the python libraries by running::
+To install or upgrade the python library run the following in a terminal::
 
-    pip.exe install -U modulo-python pyserial
+    pip.exe install -U modulo-python
 
 
 
@@ -92,5 +92,20 @@ For instance, to automatically use the first Knob::
 And to use the Knob with the ID 12345::
 
     knob = modulo.Knob(12345)
+
+Python 3
+--------------------------------------------------------------
+
+Starting with version 1.0, the modulo python library works with both
+Python 2 and Python 3.
+
+With Python 3 on OSX however, a bug in the python serial library
+prevents it from automatically detecting the controller. To work around that,
+you can find the port that the controller is connected to and specify it
+explicitly. for instance::
+
+    port = modulo.Port('/dev/tty.usbmodem12345')
+
+
 
 
