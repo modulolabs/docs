@@ -31,6 +31,41 @@ Windows 8 and 10
 * Next, right click on modulo.inf and select **Install** to complete the driver
   installation.
 
+In some cases this may not correctly associate the driver with with the device.
+Open the Device Manager and look for "Modulo Controller" under "Ports". If it's
+not there, then
+
+* With the "Unknown Device" icon selected "Update Driver Software..."
+* Select "Browse my computer for driver software"
+* Select "Let me pick from a list of device drivers on my computer"
+* Select "Ports (COM & LPT)" as the device type
+* Select "Modulo Labs LLC" as the manufacturer and "Modulo Controller" as the Model.
+* It will warn you about updating unverified drivers. Press "YES"
+
+Under "Ports (COM & LPT)" it should now show "Modulo Controller" and the port number.
+
+Cygwin and Python
+------------------------------------------
+
+When using python under cygwin, automatic port detection does not work correctly.
+Instead you must specify the port path explicitly when creating the Port object.
+
+First, find the port path. if your windows COM port is COM(#), then your virtual
+port on cygwin is /dev/ttyS(#-1). (For instance if your Modulo Controller is COM3,
+the path to the virtual port is /dev/ttyS2.) You can also find it by running
+'ls /dev/ttyS*' in the cygwin terminal.
+
+Once you have found the port path, change the code to use that specific port.
+So if your modulo controller is on COM3, then instead of::
+
+    port = modulo.Port()
+
+do::
+
+    port = modulo.Port(serialPortPath="/dev/ttyS2")
+
+
+
 Windows Driver Tutorial Feedback
 -----------------------------------------------
 
