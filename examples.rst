@@ -14,3 +14,4 @@ Joystick and Motor, or Display) that you're using.
     example-joystick-motor-python.rst
     example-display-c++.rst
     example-display-python.rst
+    example-ir-c++.rst
